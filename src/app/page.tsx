@@ -10,8 +10,9 @@ export default function Home() {
             Hi, I'm Matthew Dworkin
           </h1>
           <p className="text-lg mb-6 text-gray-600 dark:text-gray-300">
-            I'm a software developer specializing in creating elegant solutions for complex problems.
-            With expertise in modern web technologies, I build fast, accessible, and responsive applications.
+            Software developer passionate about functional programming and solving complex problems. 
+            I specialize in OCaml, Python, and building elegant solutions with a focus on correctness, 
+            performance, and maintainability.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
@@ -43,30 +44,68 @@ export default function Home() {
           Featured Projects
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[1, 2, 3].map((i) => (
-            <div
-              key={i}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition"
-            >
-              <div className="h-48 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                <span className="text-gray-500 dark:text-gray-400">Project Image</span>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
-                  Project {i}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
-                  A brief description of this amazing project and the technologies used.
-                </p>
-                <Link
-                  href={`/projects/project-${i}`}
-                  className="text-blue-600 dark:text-blue-400 hover:underline"
-                >
-                  Learn more →
-                </Link>
-              </div>
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+            <div className="h-48 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+              <span className="text-gray-500 dark:text-gray-400">Project Image</span>
             </div>
-          ))}
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+                Functional Data Processing Pipeline
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                A robust data processing system built with OCaml, leveraging functional programming 
+                principles for reliability and concurrency.
+              </p>
+              <Link
+                href="/projects/functional-pipeline"
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                Learn more →
+              </Link>
+            </div>
+          </div>
+          
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+            <div className="h-48 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+              <span className="text-gray-500 dark:text-gray-400">Project Image</span>
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+                Financial Data Visualization
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                Python-based tool for analyzing and visualizing financial market data with interactive 
+                dashboards built using NumPy, Pandas, and visualization libraries.
+              </p>
+              <Link
+                href="/projects/financial-data-viz"
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                Learn more →
+              </Link>
+            </div>
+          </div>
+          
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+            <div className="h-48 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+              <span className="text-gray-500 dark:text-gray-400">Project Image</span>
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+                Open Source Contributions
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                Collection of my contributions to open source projects, including algorithm optimizations, 
+                documentation, and library improvements.
+              </p>
+              <Link
+                href="/projects/open-source"
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                Learn more →
+              </Link>
+            </div>
+          </div>
         </div>
         <div className="mt-8 text-center">
           <Link
@@ -83,30 +122,47 @@ export default function Home() {
           Latest Blog Posts
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {[1, 2].map((i) => (
-            <div
-              key={i}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition"
-            >
-              <div className="p-6">
-                <p className="text-gray-500 dark:text-gray-400 text-sm mb-2">
-                  {new Date().toLocaleDateString()}
-                </p>
-                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
-                  Blog Post Title {i}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
-                  A brief summary of this insightful blog post that shares valuable knowledge.
-                </p>
-                <Link
-                  href={`/blog/post-${i}`}
-                  className="text-blue-600 dark:text-blue-400 hover:underline"
-                >
-                  Read more →
-                </Link>
-              </div>
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+            <div className="p-6">
+              <p className="text-gray-500 dark:text-gray-400 text-sm mb-2">
+                {new Date().toLocaleDateString()}
+              </p>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+                Exploring Functional Programming in OCaml
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                A deep dive into OCaml's type system, pattern matching, and how functional programming 
+                principles lead to more maintainable and reliable code.
+              </p>
+              <Link
+                href="/blog/functional-ocaml"
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                Read more →
+              </Link>
             </div>
-          ))}
+          </div>
+          
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+            <div className="p-6">
+              <p className="text-gray-500 dark:text-gray-400 text-sm mb-2">
+                {new Date().toLocaleDateString()}
+              </p>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+                Data Analysis with Python: Best Practices
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                Techniques for efficient data processing, visualization, and analysis using Python's 
+                scientific computing ecosystem.
+              </p>
+              <Link
+                href="/blog/python-data-analysis"
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                Read more →
+              </Link>
+            </div>
+          </div>
         </div>
         <div className="mt-8 text-center">
           <Link

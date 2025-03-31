@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Projects - Matthew Dworkin",
-  description: "Explore Matthew Dworkin's projects, applications, and software solutions.",
+  description: "Explore Matthew Dworkin's projects focused on functional programming, OCaml, data analysis, and open source contributions.",
 };
 
 type Project = {
@@ -18,55 +18,54 @@ type Project = {
 
 const projects: Project[] = [
   {
-    id: "project-1",
-    title: "E-commerce Platform",
-    description: "A modern e-commerce platform built with Next.js and Stripe, featuring product management, cart functionality, and secure checkout.",
-    technologies: ["Next.js", "React", "TypeScript", "Stripe", "Tailwind CSS"],
-    image: "/projects/ecommerce.jpg",
-    demoUrl: "https://example.com/demo1",
-    codeUrl: "https://github.com/yourusername/project1",
+    id: "functional-pipeline",
+    title: "Functional Data Processing Pipeline",
+    description: "A robust data processing system built with OCaml that leverages functional programming principles for reliability and concurrency. Handles large volumes of financial market data with high throughput and low latency.",
+    technologies: ["OCaml", "Async", "Core", "Jane Street Libraries", "Docker"],
+    image: "/projects/functional-pipeline.jpg",
+    codeUrl: "https://github.com/yourusername/functional-pipeline",
   },
   {
-    id: "project-2",
-    title: "Task Management Dashboard",
-    description: "A comprehensive task management application with real-time updates, team collaboration features, and performance analytics.",
-    technologies: ["React", "Firebase", "Material UI", "Chart.js"],
-    image: "/projects/dashboard.jpg",
-    demoUrl: "https://example.com/demo2",
-    codeUrl: "https://github.com/yourusername/project2",
+    id: "financial-data-viz",
+    title: "Financial Data Visualization Tool",
+    description: "Python-based system for analyzing and visualizing financial market data with interactive dashboards. Features statistical modeling capabilities for price prediction and anomaly detection.",
+    technologies: ["Python", "NumPy", "Pandas", "Matplotlib", "Dash", "SciPy"],
+    image: "/projects/financial-viz.jpg",
+    demoUrl: "https://example.com/financial-viz-demo",
+    codeUrl: "https://github.com/yourusername/financial-viz",
   },
   {
-    id: "project-3",
-    title: "AI Content Generator",
-    description: "An AI-powered application that generates high-quality content for blogs, social media, and marketing materials.",
-    technologies: ["Python", "TensorFlow", "Flask", "React"],
-    image: "/projects/ai-generator.jpg",
-    demoUrl: "https://example.com/demo3",
+    id: "algo-trading-simulation",
+    title: "Algorithmic Trading Simulator",
+    description: "A backtesting framework for quantitative trading strategies that simulates market conditions and evaluates performance. Implemented using functional programming patterns for reliability and correctness.",
+    technologies: ["OCaml", "Python", "Statistical Modeling", "Time Series Analysis"],
+    image: "/projects/algo-trading.jpg",
+    codeUrl: "https://github.com/yourusername/algo-trading-sim",
   },
   {
-    id: "project-4",
-    title: "Real-time Chat Application",
-    description: "A feature-rich chat application with private messaging, group channels, and media sharing capabilities.",
-    technologies: ["Socket.io", "Node.js", "Express", "MongoDB", "React"],
-    image: "/projects/chat-app.jpg",
-    codeUrl: "https://github.com/yourusername/project4",
+    id: "open-source-contributions",
+    title: "Open Source Contributions",
+    description: "Collection of my contributions to various open source projects, including performance optimizations for OCaml libraries, documentation improvements, and bug fixes.",
+    technologies: ["OCaml", "Python", "Git", "Open Source"],
+    image: "/projects/open-source.jpg",
+    codeUrl: "https://github.com/yourusername",
   },
   {
-    id: "project-5",
-    title: "Fitness Tracking App",
-    description: "A mobile-friendly application for tracking workouts, nutrition, and health metrics with visual progress reports.",
-    technologies: ["React Native", "Redux", "Firebase", "D3.js"],
-    image: "/projects/fitness-app.jpg",
-    demoUrl: "https://example.com/demo5",
-    codeUrl: "https://github.com/yourusername/project5",
+    id: "type-safe-api",
+    title: "Type-Safe API Framework",
+    description: "A strongly-typed API framework that ensures correctness at compile time. Uses advanced type system features to prevent runtime errors and provides automatic documentation generation.",
+    technologies: ["OCaml", "RESTful APIs", "JSON", "Type Systems"],
+    image: "/projects/type-safe-api.jpg",
+    demoUrl: "https://example.com/api-demo",
+    codeUrl: "https://github.com/yourusername/type-safe-api",
   },
   {
-    id: "project-6",
-    title: "Portfolio Website",
-    description: "A modern, responsive portfolio website built with Next.js and Tailwind CSS.",
-    technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion"],
-    image: "/projects/portfolio.jpg",
-    codeUrl: "https://github.com/yourusername/portfolio",
+    id: "data-analysis-toolkit",
+    title: "Data Analysis Toolkit",
+    description: "A collection of Python utilities for data cleaning, transformation, and analysis with a focus on performance and memory efficiency when working with large datasets.",
+    technologies: ["Python", "NumPy", "Pandas", "SciPy", "Jupyter"],
+    image: "/projects/data-toolkit.jpg",
+    codeUrl: "https://github.com/yourusername/data-toolkit",
   },
 ];
 
@@ -78,8 +77,9 @@ export default function ProjectsPage() {
           My Projects
         </h1>
         <p className="text-gray-600 dark:text-gray-300">
-          Explore a collection of my recent projects. Each project represents my passion for
-          creating intuitive, scalable, and performant applications.
+          A collection of my technical projects showcasing my experience with functional programming,
+          OCaml, Python, and quantitative analysis. Each project reflects my passion for building
+          reliable, efficient, and elegant solutions to complex problems.
         </p>
       </div>
 
