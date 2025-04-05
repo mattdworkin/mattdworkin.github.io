@@ -1,0 +1,8 @@
+.next
+.nextache
+out
+dist
+node_modules
+*.log
+.env
+.env.local
