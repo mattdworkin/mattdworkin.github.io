@@ -55,7 +55,7 @@ export function Navigation() {
           >
             <Linkedin className="h-5 w-5" />
           </a>
-          <a href="/resume" target="_blank" rel="noopener noreferrer">
+          <a href="/resume">
             <Button variant="outline" size="sm">
               <FileDown className="mr-2 h-4 w-4" />
               Resume
@@ -105,7 +105,7 @@ export function Navigation() {
                 >
                   <Linkedin className="h-5 w-5" />
                 </a>
-                <a href="/resume" target="_blank" rel="noopener noreferrer">
+                <a href="/resume">
                   <Button variant="outline" size="sm">
                     <FileDown className="mr-2 h-4 w-4" />
                     Resume

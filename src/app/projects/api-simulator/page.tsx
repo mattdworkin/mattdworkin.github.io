@@ -257,7 +257,7 @@ pipeline {
 
       {/* Navigation */}
       <div className="flex justify-between border-t pt-8">
-        <Link href="/projects/certifyfpga">
+        <Link href="/projects">
           <Button variant="outline">← Previous Project</Button>
         </Link>
         <Link href="/projects/poolerz">
