@@ -32,7 +32,6 @@ const projectShowcase: ProjectShowcase[] = [
     stack: ["Next.js", "FastAPI", "Postgres/Supabase", "LLM extraction", "CI"],
     signals: ["Traceability", "Audit-ready outputs", "Deterministic pipelines"],
     links: [
-      { label: "GitHub", href: "https://github.com/ringil-technologies-inc/beta" },
       { label: "Website", href: "https://www.ringiltech.com/" },
     ],
   },
@@ -44,7 +43,6 @@ const projectShowcase: ProjectShowcase[] = [
     signals: ["Pragmatic UX", "Geo clustering", "Production deployment"],
     links: [
       { label: "GitHub", href: "https://github.com/tylerrcady/poolerz" },
-      { label: "Live", href: "https://poolerz.vercel.app" },
     ],
   },
 ]
@@ -64,7 +62,7 @@ const timeline: TimelineEntry[] = [
     type: "Experience",
     title: "L3Harris Technologies - Software Engineer Intern",
     summary: "Shipped and maintained API simulation/testing infrastructure used in hardware-facing workflows.",
-    links: [{ label: "View on Resume", href: "/resume#l3harris-swe" }],
+    links: [{ label: "View on Resume", href: "/resume" }],
   },
   {
     id: "l3harris-fpga",
@@ -72,7 +70,7 @@ const timeline: TimelineEntry[] = [
     type: "Experience",
     title: "L3Harris Technologies - FPGA Electrical Engineering Intern",
     summary: "Worked on FPGA-centric hardware workflows with a focus on validation and engineering rigor.",
-    links: [{ label: "View on Resume", href: "/resume#l3harris-fpga" }],
+    links: [{ label: "View on Resume", href: "/resume" }],
   },
   {
     id: "vecima-swe",
@@ -80,7 +78,7 @@ const timeline: TimelineEntry[] = [
     type: "Experience",
     title: "Vecima Networks - Software Engineer Intern",
     summary: "Built internal Linux/Python tooling for throughput simulation and diagnostics workflows.",
-    links: [{ label: "View on Resume", href: "/resume#vecima-swe" }],
+    links: [{ label: "View on Resume", href: "/resume" }],
   },
 ]
 
@@ -143,10 +141,7 @@ export default function Home() {
               <Linkedin className="h-4 w-4" />
               LinkedIn
             </a>
-            <a
-              href="/resume"
-              className="hero-link inline-flex items-center gap-1.5 hover:text-foreground"
-            >
+            <a href="/#resume" className="hero-link inline-flex items-center gap-1.5 hover:text-foreground">
               <ExternalLink className="h-4 w-4" />
               Resume
             </a>
@@ -227,7 +222,7 @@ export default function Home() {
         <div className="mb-7">
           <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-[0.03em]">Work Experience</h2>
           <p className="mt-3 max-w-3xl text-muted-foreground">
-            A clear timeline of internships and projects that shape my current engineering direction.
+            A clear timeline of experience that shapes my current engineering direction.
           </p>
         </div>
 
@@ -258,6 +253,18 @@ export default function Home() {
               )}
             </article>
           ))}
+        </div>
+      </section>
+
+      <section id="resume" className="py-10 border-t border-white/10 scroll-mt-24" data-reveal>
+        <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-[0.03em]">Resume</h2>
+        <p className="mt-3 max-w-3xl text-muted-foreground">
+          Access my full resume details, including project history, experience, and technical skills.
+        </p>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <a href="/Matthew%20Dworkin%27s%20Resume%20(6).pdf" target="_blank" rel="noopener noreferrer">
+            <Button>Open Resume PDF</Button>
+          </a>
         </div>
       </section>
 

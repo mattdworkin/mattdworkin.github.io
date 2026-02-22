@@ -1,6 +1,9 @@
+"use client"
+
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Calendar, Download, Mail, MapPin, Phone } from "lucide-react"
+import { MouseEvent, useEffect } from "react"
 
 const experience = [
   {
@@ -92,9 +95,36 @@ const skillGroups = [
 ]
 
 export default function ResumePage() {
+  useEffect(() => {
+    const elements = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"))
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible")
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
+    )
+
+    elements.forEach((element) => observer.observe(element))
+    return () => observer.disconnect()
+  }, [])
+
+  const handlePointerMove = (event: MouseEvent<HTMLElement>) => {
+    const element = event.currentTarget
+    const rect = element.getBoundingClientRect()
+    const x = ((event.clientX - rect.left) / rect.width) * 100
+    const y = ((event.clientY - rect.top) / rect.height) * 100
+    element.style.setProperty("--mx", `${x}%`)
+    element.style.setProperty("--my", `${y}%`)
+  }
+
   return (
-    <div className="container mx-auto max-w-6xl px-4 py-10 md:py-14">
-      <section className="cell-panel p-6 md:p-10">
+    <div className="future-stream container mx-auto max-w-6xl px-4 py-10 md:py-14">
+      <section className="cell-panel interactive-card p-6 md:p-10" onMouseMove={handlePointerMove} data-reveal>
         <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
           <div>
             <h1 className="text-4xl md:text-5xl font-semibold uppercase tracking-[0.04em]">Matthew Dworkin</h1>
@@ -136,9 +166,9 @@ export default function ResumePage() {
         </div>
       </section>
 
-      <section className="mt-10">
+      <section className="mt-10" data-reveal>
         <h2 className="text-2xl md:text-3xl font-semibold uppercase tracking-[0.03em] mb-5">Education</h2>
-        <article className="cell-panel p-6">
+        <article className="cell-panel interactive-card p-6" onMouseMove={handlePointerMove}>
           <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
             <div>
               <h3 className="text-xl font-semibold">Georgia Institute of Technology: B.S. in Computer Science</h3>
@@ -160,11 +190,18 @@ export default function ResumePage() {
         </article>
       </section>
 
-      <section className="mt-10">
+      <section className="mt-10" data-reveal>
         <h2 className="text-2xl md:text-3xl font-semibold uppercase tracking-[0.03em] mb-5">Experience</h2>
         <div className="space-y-5">
-          {experience.map((entry) => (
-            <article key={entry.id} id={entry.id} className="cell-panel p-6 scroll-mt-24">
+          {experience.map((entry, index) => (
+            <article
+              key={entry.id}
+              id={entry.id}
+              className="cell-panel interactive-card p-6 scroll-mt-0"
+              onMouseMove={handlePointerMove}
+              data-reveal
+              style={{ transitionDelay: `${index * 80}ms` }}
+            >
               <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
                 <div>
                   <h3 className="text-xl font-semibold">
@@ -189,11 +226,17 @@ export default function ResumePage() {
         </div>
       </section>
 
-      <section className="mt-10">
+      <section className="mt-10" data-reveal>
         <h2 className="text-2xl md:text-3xl font-semibold uppercase tracking-[0.03em] mb-5">Projects</h2>
         <div className="space-y-5">
-          {projects.map((project) => (
-            <article key={project.name} className="cell-panel p-6">
+          {projects.map((project, index) => (
+            <article
+              key={project.name}
+              className="cell-panel interactive-card p-6"
+              onMouseMove={handlePointerMove}
+              data-reveal
+              style={{ transitionDelay: `${index * 80}ms` }}
+            >
               <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
                 <div>
                   <h3 className="text-xl font-semibold">
@@ -221,9 +264,9 @@ export default function ResumePage() {
         </div>
       </section>
 
-      <section className="mt-10">
+      <section className="mt-10" data-reveal>
         <h2 className="text-2xl md:text-3xl font-semibold uppercase tracking-[0.03em] mb-5">Technical Skills</h2>
-        <article className="cell-panel p-6">
+        <article className="cell-panel interactive-card p-6" onMouseMove={handlePointerMove}>
           <div className="space-y-4">
             {skillGroups.map((group) => (
               <div key={group.title}>

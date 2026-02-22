@@ -3,7 +3,7 @@ export interface Project {
   title: string
   description: string
   tags: string[]
-  githubUrl: string
+  githubUrl?: string
   liveUrl?: string
   featured: boolean
 }
@@ -15,7 +15,7 @@ export const projects: Project[] = [
     description:
       "AI-assisted FPGA verification workflow for generating requirements traces, HDL, and simulation artifacts.",
     tags: ["Next.js", "FastAPI", "Supabase", "FPGA"],
-    githubUrl: "https://github.com/ringil-technologies-inc/beta",
+    liveUrl: "https://www.ringiltech.com/",
     featured: true,
   },
   {
@@ -34,7 +34,6 @@ export const projects: Project[] = [
       "Carpool coordination app that uses clustering to group riders by location and availability.",
     tags: ["Next.js", "TypeScript", "MongoDB", "DBSCAN"],
     githubUrl: "https://github.com/tylerrcady/poolerz",
-    liveUrl: "https://poolerz.vercel.app",
     featured: true,
   },
 ]

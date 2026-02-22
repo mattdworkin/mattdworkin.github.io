@@ -9,6 +9,7 @@ const navItems = [
   { href: "/#home", label: "Home" },
   { href: "/#projects", label: "Projects" },
   { href: "/#timeline", label: "Timeline" },
+  { href: "/resume", label: "Resume" },
   { href: "/#contact", label: "Contact" },
 ]
 
@@ -55,7 +56,7 @@ export function Navigation() {
           >
             <Linkedin className="h-5 w-5" />
           </a>
-          <a href="/resume">
+          <a href="/#resume">
             <Button variant="outline" size="sm">
               <FileDown className="mr-2 h-4 w-4" />
               Resume
@@ -105,7 +106,7 @@ export function Navigation() {
                 >
                   <Linkedin className="h-5 w-5" />
                 </a>
-                <a href="/resume">
+                <a href="/#resume">
                   <Button variant="outline" size="sm">
                     <FileDown className="mr-2 h-4 w-4" />
                     Resume

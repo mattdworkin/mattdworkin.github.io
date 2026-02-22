@@ -7,17 +7,23 @@ import { ExternalLink, Github } from "lucide-react"
 import { Project } from "@/data/projects"
 
 export function ProjectCard({ project }: { project: Project }) {
+  const primaryUrl = project.githubUrl ?? project.liveUrl
+
   const openGithub = () => {
-    window.open(project.githubUrl, "_blank", "noopener,noreferrer")
+    if (!primaryUrl) return
+    window.open(primaryUrl, "_blank", "noopener,noreferrer")
   }
 
   return (
     <Card
-      className="group flex h-full flex-col cursor-pointer border-border/80 bg-card/80 transition-transform duration-200 hover:-translate-y-1"
-      role="link"
-      tabIndex={0}
+      className={`group flex h-full flex-col border-border/80 bg-card/80 transition-transform duration-200 hover:-translate-y-1 ${
+        primaryUrl ? "cursor-pointer" : ""
+      }`}
+      role={primaryUrl ? "link" : undefined}
+      tabIndex={primaryUrl ? 0 : -1}
       onClick={openGithub}
       onKeyDown={(event) => {
+        if (!primaryUrl) return
         if (event.key === "Enter" || event.key === " ") {
           event.preventDefault()
           openGithub()
@@ -38,11 +44,13 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
       </CardContent>
       <CardFooter className="mt-4 flex gap-2 border-t border-border/60 pt-4">
-        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
-          <Button variant="outline" size="sm">
-            <Github className="mr-1 h-4 w-4" /> GitHub
-          </Button>
-        </a>
+        {project.githubUrl && (
+          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+            <Button variant="outline" size="sm">
+              <Github className="mr-1 h-4 w-4" /> GitHub
+            </Button>
+          </a>
+        )}
         {project.liveUrl && (
           <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
             <Button variant="outline" size="sm">
