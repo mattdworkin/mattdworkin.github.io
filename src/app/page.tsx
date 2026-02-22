@@ -36,6 +36,18 @@ const projectShowcase: ProjectShowcase[] = [
     ],
   },
   {
+    id: "smart-trade-advisor",
+    title: "Smart Trade Advisor",
+    summary:
+      "Agentic market research platform that routes each question across market data, headlines, vector knowledge, and company graph relationships to produce role-aware trading recommendations.",
+    stack: ["FastAPI", "Python", "Neon pgvector", "Neo4j", "NewsAPI.ai", "OpenAI"],
+    signals: ["Source routing", "Role-aware outputs", "Action planning automation"],
+    links: [
+      { label: "Live App", href: "https://smart-trade-advisor.onrender.com/" },
+      { label: "GitHub", href: "https://github.com/mattdworkin/smart-trade-advisor" },
+    ],
+  },
+  {
     id: "poolerz",
     title: "Poolerz",
     summary: "Full-stack ride coordination app with clustering-based rider grouping and practical scheduling workflows.",

@@ -10,6 +10,16 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "smart-trade-advisor",
+    title: "Smart Trade Advisor",
+    description:
+      "Role-aware AI market research platform that routes queries across market data, news, vector knowledge, and graph relationships to generate actionable trading insights.",
+    tags: ["Python", "FastAPI", "Neon", "pgvector", "Neo4j", "AI Agents"],
+    githubUrl: "https://github.com/mattdworkin/smart-trade-advisor",
+    liveUrl: "https://smart-trade-advisor.onrender.com/",
+    featured: true,
+  },
+  {
     id: "certifyfpga",
     title: "CertifyFPGA",
     description:
