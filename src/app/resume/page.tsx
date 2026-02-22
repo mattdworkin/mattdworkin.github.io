@@ -48,7 +48,7 @@ const experience = [
 const projects = [
   {
     name: "Ringil",
-    link: "https://www.linkedin.com/company/ringil-ai",
+    link: "https://www.ringiltech.com/",
     date: "January 2026 - Present",
     highlights: [
       "Built a full-stack AI system Next.js 14, FastAPI and Supabase that converts unstructured proposal and specification documents into structured, queryable requirement and verification data",
