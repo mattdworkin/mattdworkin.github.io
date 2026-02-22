@@ -30,7 +30,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build (static export via next.config.js output: "export")
+      - name: Build (static export via next.config.js output="export")
         run: npx --no-install next build
 
       - name: Upload artifact
