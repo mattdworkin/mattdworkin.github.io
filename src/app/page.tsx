@@ -80,7 +80,7 @@ const timeline: TimelineEntry[] = [
     id: "l3harris-fpga",
     period: "May 2024 - Aug 2024",
     type: "Experience",
-    title: "L3Harris Technologies - FPGA Electrical Engineering Intern",
+    title: "L3Harris Technologies - FPGA Electrical Engineer Intern",
     summary: "Worked on FPGA-centric hardware workflows with a focus on validation and engineering rigor.",
     links: [{ label: "View on Resume", href: "/resume" }],
   },
