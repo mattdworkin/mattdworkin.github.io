@@ -64,7 +64,7 @@ const timeline: TimelineEntry[] = [
     id: "ringil-current",
     period: "Jan 2026 - Present",
     type: "Project",
-    title: "Ringil",
+    title: "Ringil - Founder",
     summary: "Building traceability-first verification automation for high-assurance engineering workflows.",
     links: [{ label: "Website", href: "https://www.ringiltech.com/" }],
   },
