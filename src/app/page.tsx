@@ -61,14 +61,6 @@ const projectShowcase: ProjectShowcase[] = [
 
 const timeline: TimelineEntry[] = [
   {
-    id: "ringil-current",
-    period: "Jan 2026 - Present",
-    type: "Project",
-    title: "Ringil - Founder",
-    summary: "Building traceability-first verification automation for high-assurance engineering workflows.",
-    links: [{ label: "Website", href: "https://www.ringiltech.com/" }],
-  },
-  {
     id: "l3harris-swe",
     period: "May 2025 - Aug 2025",
     type: "Experience",
@@ -81,7 +73,7 @@ const timeline: TimelineEntry[] = [
     period: "May 2024 - Aug 2024",
     type: "Experience",
     title: "L3Harris Technologies - FPGA Electrical Engineer Intern",
-    summary: "Worked on FPGA-centric hardware workflows with a focus on validation and engineering rigor.",
+    summary: "Owned FPGA hardware workflows with a focus on validation and engineering rigor.",
     links: [{ label: "View on Resume", href: "/resume" }],
   },
   {
