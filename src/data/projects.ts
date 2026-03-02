@@ -20,6 +20,15 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    id: "training-fox",
+    title: "Training Fox",
+    description:
+      "Fox-themed running plan generator that builds personalized weekly schedules with visual workout distribution and device integration support.",
+    tags: ["React", "Material UI", "Chart.js", "Node.js", "Express", "Strava"],
+    githubUrl: "https://github.com/mattdworkin/training-app",
+    featured: true,
+  },
+  {
     id: "certifyfpga",
     title: "CertifyFPGA",
     description:

@@ -57,6 +57,17 @@ const projectShowcase: ProjectShowcase[] = [
       { label: "GitHub", href: "https://github.com/tylerrcady/poolerz" },
     ],
   },
+  {
+    id: "training-fox",
+    title: "Training Fox",
+    summary:
+      "Running training plan generator with a fox-themed UX, personalized weekly schedules, and workout analytics backed by a real API.",
+    stack: ["React", "Material UI", "Chart.js", "Node.js", "Express", "CSV parsing"],
+    signals: ["Personalized plans", "Device integration", "Responsive frontend"],
+    links: [
+      { label: "GitHub", href: "https://github.com/mattdworkin/training-app" },
+    ],
+  },
 ]
 
 const timeline: TimelineEntry[] = [
