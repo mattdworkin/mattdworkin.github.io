@@ -34,7 +34,7 @@ export const projects: Project[] = [
     description:
       "AI-assisted FPGA verification workflow for generating requirements traces, HDL, and simulation artifacts.",
     tags: ["Next.js", "FastAPI", "Supabase", "FPGA"],
-    liveUrl: "https://www.ringiltech.com/",
+    liveUrl: "https://ringil.ai/",
     featured: true,
   },
   {
@@ -53,6 +53,7 @@ export const projects: Project[] = [
       "Carpool coordination app that uses clustering to group riders by location and availability.",
     tags: ["Next.js", "TypeScript", "MongoDB", "DBSCAN"],
     githubUrl: "https://github.com/tylerrcady/poolerz",
+    liveUrl: "https://www.youtube.com/watch?v=pJ6yE6MAZBo",
     featured: true,
   },
 ]

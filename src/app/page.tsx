@@ -32,7 +32,7 @@ const projectShowcase: ProjectShowcase[] = [
     stack: ["Next.js", "FastAPI", "Postgres/Supabase", "LLM extraction", "CI"],
     signals: ["Traceability", "Audit-ready outputs", "Deterministic pipelines"],
     links: [
-      { label: "Website", href: "https://www.ringiltech.com/" },
+      { label: "Website", href: "https://ringil.ai/" },
     ],
   },
   {
@@ -55,6 +55,7 @@ const projectShowcase: ProjectShowcase[] = [
     signals: ["Pragmatic UX", "Geo clustering", "Production deployment"],
     links: [
       { label: "GitHub", href: "https://github.com/tylerrcady/poolerz" },
+      { label: "Demo Video", href: "https://www.youtube.com/watch?v=pJ6yE6MAZBo" },
     ],
   },
   {

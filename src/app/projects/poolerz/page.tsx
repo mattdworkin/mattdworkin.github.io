@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Github } from "lucide-react"
+import { Github, Video } from "lucide-react"
 import Link from "next/link"
 
 export default function PoolerzPage() {
@@ -34,6 +34,16 @@ export default function PoolerzPage() {
             <Button>
               <Github className="mr-2 h-4 w-4" />
               View Code
+            </Button>
+          </a>
+          <a
+            href="https://www.youtube.com/watch?v=pJ6yE6MAZBo"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button variant="outline">
+              <Video className="mr-2 h-4 w-4" />
+              Watch Demo
             </Button>
           </a>
         </div>
