@@ -306,19 +306,105 @@ html {
   box-shadow: 12px 12px 0 rgba(4, 25, 37, 0.55);
 }
 
+.about-cosmos {
+  --about-x: 50%;
+  --about-y: 38%;
+  position: relative;
+  min-height: calc(100vh - 4rem);
+  overflow: hidden;
+}
+
+.about-cosmos::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at var(--about-x) var(--about-y), rgba(126, 213, 255, 0.25), transparent 28%),
+    radial-gradient(circle at 14% 18%, rgba(96, 132, 255, 0.24), transparent 30%),
+    radial-gradient(circle at 82% 16%, rgba(120, 94, 255, 0.22), transparent 34%),
+    radial-gradient(circle at 62% 86%, rgba(61, 228, 255, 0.16), transparent 32%),
+    linear-gradient(160deg, rgba(2, 8, 20, 0.94), rgba(3, 10, 27, 0.96) 42%, rgba(2, 7, 17, 0.98));
+  z-index: 0;
+}
+
+.about-aurora {
+  position: absolute;
+  inset: -14%;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 25% 36%, rgba(98, 172, 255, 0.2), transparent 40%),
+    radial-gradient(circle at 72% 62%, rgba(80, 237, 255, 0.18), transparent 43%);
+  filter: blur(48px);
+  animation: aurora-drift 22s ease-in-out infinite alternate;
+}
+
+.about-haze {
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  z-index: 0;
+  background: conic-gradient(
+    from 120deg at 50% 50%,
+    rgba(90, 118, 255, 0.14),
+    rgba(0, 0, 0, 0) 30%,
+    rgba(64, 204, 255, 0.12) 56%,
+    rgba(0, 0, 0, 0) 78%,
+    rgba(90, 118, 255, 0.14)
+  );
+  mix-blend-mode: screen;
+  animation: haze-rotate 30s linear infinite;
+}
+
+.about-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(2px 2px at 7% 14%, rgba(241, 250, 255, 0.9), transparent),
+    radial-gradient(1.5px 1.5px at 18% 72%, rgba(221, 241, 255, 0.8), transparent),
+    radial-gradient(1.5px 1.5px at 24% 44%, rgba(241, 250, 255, 0.8), transparent),
+    radial-gradient(1.5px 1.5px at 38% 24%, rgba(221, 241, 255, 0.8), transparent),
+    radial-gradient(2px 2px at 49% 88%, rgba(241, 250, 255, 0.9), transparent),
+    radial-gradient(1.5px 1.5px at 56% 41%, rgba(221, 241, 255, 0.75), transparent),
+    radial-gradient(2px 2px at 69% 16%, rgba(241, 250, 255, 0.85), transparent),
+    radial-gradient(1.5px 1.5px at 79% 68%, rgba(221, 241, 255, 0.8), transparent),
+    radial-gradient(1.5px 1.5px at 87% 36%, rgba(241, 250, 255, 0.8), transparent),
+    radial-gradient(2px 2px at 95% 82%, rgba(241, 250, 255, 0.85), transparent);
+  animation: star-shift 26s linear infinite;
+}
+
+.about-stars-far {
+  opacity: 0.45;
+  transform: scale(1.06);
+  animation-duration: 42s;
+}
+
+.about-intro {
+  border-radius: 1rem;
+  border-color: rgba(148, 203, 255, 0.32);
+  background: linear-gradient(150deg, rgba(11, 20, 37, 0.76), rgba(8, 15, 31, 0.7));
+  box-shadow:
+    0 28px 46px rgba(2, 8, 20, 0.46),
+    inset 0 1px 0 rgba(208, 236, 255, 0.09);
+}
+
+.about-intro::after {
+  border-color: rgba(155, 213, 255, 0.14);
+}
+
 .graph-board {
   position: relative;
-  min-height: 740px;
-  border: 1px solid hsl(var(--border));
-  background:
-    linear-gradient(rgba(129, 212, 255, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(129, 212, 255, 0.07) 1px, transparent 1px),
-    linear-gradient(160deg, rgba(8, 14, 25, 0.9), rgba(5, 10, 18, 0.98));
-  background-size:
-    36px 36px,
-    36px 36px,
-    100% 100%;
-  box-shadow: 12px 12px 0 rgba(3, 7, 14, 0.55);
+  min-height: max(760px, calc(100vh - 15rem));
+  border: 1px solid rgba(147, 211, 255, 0.2);
+  border-radius: 1rem;
+  background: linear-gradient(155deg, rgba(8, 14, 29, 0.56), rgba(4, 10, 22, 0.58));
+  backdrop-filter: blur(6px);
+  box-shadow:
+    0 30px 52px rgba(2, 7, 18, 0.58),
+    inset 0 1px 0 rgba(201, 235, 255, 0.05);
   overflow: hidden;
 }
 
@@ -327,7 +413,10 @@ html {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(circle at 50% 44%, rgba(102, 209, 255, 0.16), transparent 48%);
+  background:
+    radial-gradient(circle at var(--about-x) var(--about-y), rgba(102, 209, 255, 0.18), transparent 35%),
+    radial-gradient(circle at 18% 76%, rgba(93, 103, 255, 0.12), transparent 40%);
+  transition: background 180ms ease;
 }
 
 .graph-lines {
@@ -341,18 +430,46 @@ html {
 
 .graph-lines path {
   fill: none;
-  stroke: rgba(125, 208, 255, 0.55);
-  stroke-width: 2;
-  stroke-dasharray: 7 8;
+  stroke-linecap: round;
+}
+
+.graph-link-main {
+  stroke: rgba(150, 220, 255, 0.56);
+  stroke-width: 2.2;
+  stroke-dasharray: 6 10;
+  animation: line-flow 18s linear infinite;
+}
+
+.graph-link-secondary {
+  stroke: rgba(138, 177, 255, 0.32);
+  stroke-width: 1.6;
+  stroke-dasharray: 4 10;
+  animation: line-flow 24s linear infinite reverse;
 }
 
 .graph-node {
   position: absolute;
   z-index: 2;
-  border: 1px solid hsl(var(--border));
-  background: linear-gradient(160deg, rgba(11, 18, 31, 0.95), rgba(6, 11, 21, 0.95));
-  box-shadow: 10px 10px 0 rgba(3, 7, 14, 0.5);
+  border: 1px solid rgba(149, 208, 255, 0.24);
+  border-radius: 0.9rem;
+  background: linear-gradient(160deg, rgba(10, 18, 34, 0.77), rgba(8, 15, 28, 0.74));
+  box-shadow:
+    0 14px 30px rgba(2, 8, 20, 0.42),
+    inset 0 1px 0 rgba(207, 237, 255, 0.06);
   padding: 1rem;
+  backdrop-filter: blur(8px);
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.graph-node:hover {
+  transform: translateY(-4px);
+  border-color: rgba(156, 222, 255, 0.46);
+  box-shadow:
+    0 18px 36px rgba(2, 9, 22, 0.52),
+    inset 0 1px 0 rgba(217, 241, 255, 0.08);
 }
 
 .graph-hub {
@@ -390,11 +507,26 @@ html {
 }
 
 .graph-chip {
-  border: 1px solid hsl(var(--border));
-  background: rgba(11, 19, 32, 0.8);
-  padding: 0.25rem 0.45rem;
+  border: 1px solid rgba(152, 210, 255, 0.28);
+  border-radius: 0.5rem;
+  background: rgba(11, 20, 35, 0.66);
+  padding: 0.32rem 0.52rem;
   text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.graph-node .path-branch {
+  border-color: rgba(150, 204, 255, 0.28);
+  border-radius: 0.65rem;
+  background: rgba(8, 16, 30, 0.58);
+  font-size: 0.7rem;
   letter-spacing: 0.08em;
+  text-transform: none;
+}
+
+.graph-node .path-branch:hover {
+  border-color: rgba(162, 223, 255, 0.54);
+  transform: translateY(-1px);
 }
 
 .graph-media {
@@ -424,8 +556,9 @@ html {
 }
 
 .graph-list {
-  border: 1px solid rgba(124, 207, 255, 0.28);
-  background: rgba(7, 13, 23, 0.72);
+  border: 1px solid rgba(139, 195, 255, 0.25);
+  border-radius: 0.65rem;
+  background: rgba(7, 14, 27, 0.65);
   padding: 0.55rem 0.65rem;
 }
 
@@ -448,6 +581,42 @@ html {
   margin-top: 0.15rem;
 }
 
+@keyframes aurora-drift {
+  0% {
+    transform: translate3d(-2%, -1%, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(2.5%, 1.2%, 0) scale(1.07);
+  }
+}
+
+@keyframes haze-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes star-shift {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-18px);
+  }
+}
+
+@keyframes line-flow {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -120;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -461,8 +630,14 @@ html {
 
   .interactive-card,
   .filter-chip,
-  .hero-link::after {
+  .hero-link::after,
+  .about-aurora,
+  .about-stars,
+  .about-haze,
+  .graph-link-main,
+  .graph-link-secondary {
     transition: none;
+    animation: none;
   }
 }
 

@@ -290,7 +290,7 @@ function CarpoolRoster({ carpoolId }: { carpoolId: string }) {
         <Link href="/projects/api-simulator">
           <Button variant="outline">← Previous Project</Button>
         </Link>
-        <Link href="/projects">
+        <Link href="/#projects">
           <Button variant="outline">Back to Projects</Button>
         </Link>
       </div>
