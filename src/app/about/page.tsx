@@ -9,7 +9,15 @@ import { RecommendationBoard } from "@/components/RecommendationBoard"
 const topFiveLists = [
   {
     title: "Top 5 Movies",
+    items: ["The Social Network", "Heat", "The Fellowship of the Ring", "A Ghost Story", "Pan's Labyrinth"],
+  },
+  {
+    title: "Top 5 TV Shows",
     items: ["True Detective", "Attack on Titan", "Breaking Bad", "Game of Thrones", "Over the Garden Wall"],
+  },
+  {
+    title: "Top 5 Video Games",
+    items: ["Middle-Earth: Shadow of War", "Overwatch", "Rainbow Six Seige", "Minecraft", "Fortnite"],
   },
   {
     title: "Top 5 Directors",
