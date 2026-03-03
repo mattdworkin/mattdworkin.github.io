@@ -200,12 +200,13 @@ export function StravaDashboard({ summary }: { summary: StravaSummary }) {
           </svg>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <div className="rounded-lg border border-white/10 bg-black/20 p-3">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-3">
+          <div className="min-w-0 overflow-hidden rounded-lg border border-white/10 bg-black/20 p-3">
             <p className="kicker">Last 8 Weeks Mileage</p>
             <div className="mt-3 flex h-24 items-end gap-2">
-              {weekly.map((entry) => {
+              {weekly.map((entry, index) => {
                 const height = Math.max(8, Math.round((entry.km / weeklyMax) * 88))
+                const showLabel = index % 2 === 0 || index === weekly.length - 1
                 return (
                   <div key={entry.week_start} className="flex-1">
                     <div
@@ -213,14 +214,16 @@ export function StravaDashboard({ summary }: { summary: StravaSummary }) {
                       style={{ height: `${height}px` }}
                       title={`${entry.label}: ${round(entry.km)} km`}
                     />
-                    <p className="mt-1 text-[10px] text-center text-muted-foreground">{entry.label}</p>
+                    <p className="mt-1 h-7 text-[10px] leading-3 text-center text-muted-foreground">
+                      {showLabel ? entry.label : ""}
+                    </p>
                   </div>
                 )
               })}
             </div>
           </div>
 
-          <div className="rounded-lg border border-white/10 bg-black/20 p-3">
+          <div className="min-w-0 overflow-hidden rounded-lg border border-white/10 bg-black/20 p-3">
             <p className="kicker">Easy Pace Trend</p>
             <svg viewBox="0 0 100 54" className="mt-2 h-24 w-full">
               <rect x="0.5" y="0.5" width="99" height="53" fill="rgba(7, 12, 22, 0.45)" stroke="rgba(255,255,255,0.12)" />
@@ -243,7 +246,7 @@ export function StravaDashboard({ summary }: { summary: StravaSummary }) {
               )}
             </svg>
             {paceTrend.length > 0 && (
-              <p className="mt-2 text-xs text-muted-foreground">
+              <p className="mt-2 text-xs text-muted-foreground text-right">
                 Latest: {formatPace(paceTrend[paceTrend.length - 1].pace_sec_per_km)}
               </p>
             )}
