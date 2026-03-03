@@ -102,7 +102,7 @@ You know I do the software thing, but believe it or not, there's lots of other t
           <div className="grid grid-cols-1 md:grid-cols-[1fr_1.1fr] gap-5 items-start">
             <div>
               <p className="kicker">Music</p>
-              <h2 className="mt-2 text-3xl font-semibold">Band Work and Live Shows</h2>
+              <h2 className="mt-2 text-3xl font-semibold">Spring Street & Drums</h2>
               <p className="mt-3 text-muted-foreground">
                 Spring Street is the band my friends and I started about a month ago. We're mostly new players and I started learning the drums for it! It's been tough but playing songs I love in front of an audience has always been on my bucket list and I can safely say we survived our first "concert" and some people even said they liked it! Follow our instagram if you want to check us out next time we perform!
               </p>
@@ -141,15 +141,15 @@ You know I do the software thing, but believe it or not, there's lots of other t
         <article className="cell-panel p-5 md:p-6">
           <div className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr] gap-5">
             <img
-              src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80"
-              alt="Friends spending time together"
+              src="/fam.jpg"
+              alt="Family photo"
               className="h-full min-h-[260px] w-full object-cover border border-white/10"
             />
             <div>
               <p className="kicker">Friends & Family</p>
               <h2 className="mt-2 text-3xl font-semibold">People First, Always</h2>
               <p className="mt-3 text-muted-foreground">
-                The core support system and the reason everything else matters. This is the anchor.
+                It's impossible for me to imagine my life without the all of the positive influential friends and family I've been so fortunate to have. It's so important to have people in your corner you can count on in good time and bad times. I have two amazing parents who are both successful engineers themselves and two wonderful sisters who keep me grounded. A special note goes to my twin Rebecca who has truly been with me in all stages of my life (GOAT). Since moving to Atlanta for college, I've been lucky to meet some of the best friends I could ask for and I hope to continue to grow my circle of friends as much as possible. If you want to chat about anything at all, please don't hesitate to reach out!
               </p>
               <div className="mt-5 flex flex-wrap gap-3 text-sm">
                 <a href="mailto:mdworkin3@gatech.edu" className="path-branch block">
