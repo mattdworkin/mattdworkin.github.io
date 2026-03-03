@@ -90,7 +90,7 @@ You know I do the software thing, but believe it or not, there's lots of other t
               <p className="kicker">Running</p>
               <h2 className="mt-2 text-3xl font-semibold">Discipline Before Motivation</h2>
               <p className="mt-3 text-muted-foreground">
-                Running keeps everything else sharp for me. I always feel better after a nice run preferably with a friend. Some of the best conversations I've had in my life were during a run. Distance especially has a special place in my heart because of how it translates to other aspects of life: discipline, patience, endurance, and overall delayed gratification. Sadly, my achilles tendinitis came back recently so I've been doing cross training and other sports in the meantime. 
+                Running keeps everything else sharp for me. I always feel better after a run, preferably with a friend. Some of the best conversations I’ve had have happened during long runs. Distance running has a special place in my heart because it rewards consistency over motivation. You can’t fake a long run — you just have to keep going. Over time it teaches discipline, patience, endurance, and the value of delayed gratification. Recently my Achilles tendinitis came back, so I’ve been cross-training and playing other sports in the meantime. 
               </p>
               <div className="mt-5 flex flex-wrap gap-3 text-sm">
                 <a
