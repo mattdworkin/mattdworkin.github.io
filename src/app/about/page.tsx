@@ -4,6 +4,7 @@ import { ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { readStravaSummary } from "@/lib/strava"
 import { StravaDashboard } from "@/components/StravaDashboard"
+import { RecommendationBoard } from "@/components/RecommendationBoard"
 
 const topFiveLists = [
   {
@@ -182,6 +183,7 @@ You know I do the software thing, but believe it or not, there's lots of other t
             </article>
           ))}
         </div>
+        <RecommendationBoard />
       </section>
     </div>
   )
