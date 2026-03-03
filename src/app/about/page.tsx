@@ -146,8 +146,8 @@ You know I do the software thing, but believe it or not, there's lots of other t
               className="h-full min-h-[260px] w-full object-cover border border-white/10"
             />
             <div>
-              <p className="kicker">Friends & Family</p>
-              <h2 className="mt-2 text-3xl font-semibold">People First, Always</h2>
+              <p className="kicker">Community</p>
+              <h2 className="mt-2 text-3xl font-semibold">Friends & Family</h2>
               <p className="mt-3 text-muted-foreground">
                 It's impossible for me to imagine my life without the all of the positive influential friends and family I've been so fortunate to have. It's so important to have people in your corner you can count on in good time and bad times. I have two amazing parents who are both successful engineers themselves and two wonderful sisters who keep me grounded. A special note goes to my twin Rebecca who has truly been with me in all stages of my life (GOAT). Since moving to Atlanta for college, I've been lucky to meet some of the best friends I could ask for and I hope to continue to grow my circle of friends as much as possible. If you want to chat about anything at all, please don't hesitate to reach out!
               </p>
