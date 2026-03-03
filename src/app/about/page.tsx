@@ -73,15 +73,15 @@ You know I do the software thing, but believe it or not, there's lots of other t
         <article className="cell-panel p-5 md:p-6">
           <div className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr] gap-5">
             <img
-              src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1200&q=80"
-              alt="Runners on a track"
+              src="/atlanta-beltline-eastside-trail-04.jpg"
+              alt="Atlanta BeltLine Eastside Trail"
               className="h-full min-h-[260px] w-full object-cover border border-white/10"
             />
             <div>
               <p className="kicker">Running</p>
-              <h2 className="mt-2 text-3xl font-semibold">Performance, Pace, Discipline</h2>
+              <h2 className="mt-2 text-3xl font-semibold">Discipline Before Motivation</h2>
               <p className="mt-3 text-muted-foreground">
-                Running keeps everything else sharp. It is structure, momentum, and consistency.
+                Running keeps everything else sharp for me. I always feel better after a nice run preferably with a friend. Some of the best conversations I've had in my life were during a run. Distance especially has a special place in my heart because of how it translates to other aspects of life: discipline, patience, endurance, and overall delayed gratification. Sadly, my achilles tendinitis came back recently so I've been doing cross training and other sports in the meantime. 
               </p>
               <div className="mt-5 flex flex-wrap gap-3 text-sm">
                 <a
@@ -92,9 +92,6 @@ You know I do the software thing, but believe it or not, there's lots of other t
                 >
                   Georgia MileSplit Profile <ExternalLink className="ml-2 inline h-3.5 w-3.5" />
                 </a>
-                <Link href="/#projects" className="path-branch block">
-                  See Projects
-                </Link>
               </div>
               <StravaDashboard summary={stravaSummary} />
             </div>
