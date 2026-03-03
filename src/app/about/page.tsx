@@ -9,7 +9,7 @@ import { RecommendationBoard } from "@/components/RecommendationBoard"
 const topFiveLists = [
   {
     title: "Top 5 Movies",
-    items: ["The Social Network", "Heat", "The Fellowship of the Ring", "A Ghost Story", "Pan's Labyrinth"],
+    items: ["True Detective", "Attack on Titan", "Breaking Bad", "Game of Thrones", "Over the Garden Wall"],
   },
   {
     title: "Top 5 Directors",
