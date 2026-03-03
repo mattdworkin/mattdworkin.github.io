@@ -21,6 +21,7 @@ type Recommendation = {
 }
 
 const STORAGE_KEY = "about-recommendations-v1"
+const recommendationsWebhook = process.env.NEXT_PUBLIC_RECOMMENDATION_WEBHOOK_URL?.trim() ?? ""
 
 const targetLabels: Record<RecommendationTarget, string> = {
   watch: "Watch List",
@@ -82,6 +83,7 @@ export function RecommendationBoard() {
   const [anonymous, setAnonymous] = useState(true)
   const [message, setMessage] = useState("")
   const [hasLoadedStorage, setHasLoadedStorage] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   useEffect(() => {
     setRecommendations(parseRecommendations(window.localStorage.getItem(STORAGE_KEY)))
@@ -107,7 +109,7 @@ export function RecommendationBoard() {
     return grouped
   }, [recommendations])
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
     const cleanTitle = title.trim()
@@ -132,11 +134,45 @@ export function RecommendationBoard() {
       createdAt: new Date().toISOString(),
     }
 
+    setIsSubmitting(true)
     setRecommendations((previous) => [nextRecommendation, ...previous].slice(0, 120))
     setTitle("")
     setName("")
     setAnonymous(true)
-    setMessage(`Added to ${targetLabels[target]}.`)
+
+    if (!recommendationsWebhook) {
+      setMessage(`Added to ${targetLabels[target]}.`)
+      setIsSubmitting(false)
+      return
+    }
+
+    try {
+      const response = await fetch(recommendationsWebhook, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          list: target,
+          recommendation: cleanTitle,
+          anonymous,
+          name: anonymous ? null : cleanName,
+          submitted_at: nextRecommendation.createdAt,
+          source: "about-page",
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error(`Webhook responded with status ${response.status}`)
+      }
+
+      setMessage(`Added to ${targetLabels[target]} and sent.`)
+    } catch {
+      setMessage(`Added to ${targetLabels[target]} here, but sending failed.`)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -154,6 +190,7 @@ export function RecommendationBoard() {
             className="mt-2 w-full border border-border bg-black/30 px-3 py-2 text-sm text-foreground focus:border-primary focus:outline-none"
             value={target}
             onChange={(event) => setTarget(event.target.value as RecommendationTarget)}
+            disabled={isSubmitting}
           >
             {recommendationTargets.map((option) => (
               <option key={option.value} value={option.value}>
@@ -170,6 +207,7 @@ export function RecommendationBoard() {
             value={title}
             onChange={(event) => setTitle(event.target.value)}
             maxLength={120}
+            disabled={isSubmitting}
             placeholder="Title or artist + song"
             className="mt-2 w-full border border-border bg-black/30 px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none"
           />
@@ -182,7 +220,7 @@ export function RecommendationBoard() {
             value={name}
             onChange={(event) => setName(event.target.value)}
             maxLength={60}
-            disabled={anonymous}
+            disabled={anonymous || isSubmitting}
             placeholder={anonymous ? "Hidden while anonymous is on" : "Name"}
             className="mt-2 w-full border border-border bg-black/30 px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-60 focus:border-primary focus:outline-none"
           />
@@ -194,12 +232,13 @@ export function RecommendationBoard() {
               type="checkbox"
               checked={anonymous}
               onChange={(event) => setAnonymous(event.target.checked)}
+              disabled={isSubmitting}
               className="h-4 w-4"
             />
             Post anonymously
           </label>
-          <Button type="submit" className="w-full md:w-auto">
-            Add Recommendation
+          <Button type="submit" className="w-full md:w-auto" disabled={isSubmitting}>
+            {isSubmitting ? "Submitting..." : "Add Recommendation"}
           </Button>
         </div>
       </form>

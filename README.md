@@ -59,6 +59,19 @@ npm run build
 # The static site will be in the /out directory
 ```
 
+### Recommendation Submissions (No DB)
+
+The About page recommendation form can forward submissions to a webhook so you can see what visitors send without running a backend.
+
+1. Create a form endpoint (for example: Formspree).
+2. Add this env var in `.env.local`:
+
+```bash
+NEXT_PUBLIC_RECOMMENDATION_WEBHOOK_URL=your_webhook_endpoint
+```
+
+3. Restart dev server or rebuild for production.
+
 ### Deploy to GitHub Pages
 
 This site uses static export (`output: 'export'`) for GitHub Pages deployment.

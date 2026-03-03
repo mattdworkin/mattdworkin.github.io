@@ -41,6 +41,8 @@ jobs:
 
       - name: Build (static export via next.config.js output="export")
         run: npx --no-install next build
+        env:
+          NEXT_PUBLIC_RECOMMENDATION_WEBHOOK_URL: https://formspree.io/f/xzdalknl
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
