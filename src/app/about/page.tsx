@@ -12,23 +12,23 @@ const topFiveLists = [
   },
   {
     title: "Top 5 Directors",
-    items: ["Add director #1", "Add director #2", "Add director #3", "Add director #4", "Add director #5"],
+    items: ["David Fincher", "Michael Mann", "Guillermo del Toro", "Denis Villeneuve", "Paul Thomas Anderson"],
   },
   {
     title: "Top 5 Authors",
-    items: ["Add author #1", "Add author #2", "Add author #3", "Add author #4", "Add author #5"],
+    items: ["J.R.R. Tolkien", "Malcolm Gladwell", "Franz Kafka", "J.K. Rowling", "Fyodor Dostoevsky"],
   },
   {
     title: "Top 5 Books",
-    items: ["Add book #1", "Add book #2", "Add book #3", "Add book #4", "Add book #5"],
+    items: ["Ender's Game", "The Silmarillion", "Outliers", "The Maze Runner", "Normal People"],
   },
   {
     title: "Top 5 Songs",
-    items: ["Add song #1", "Add song #2", "Add song #3", "Add song #4", "Add song #5"],
+    items: ["Harvest Moon", "Blow Out", "DARE", "Warning Sign", "505"],
   },
   {
     title: "Top 5 Artists",
-    items: ["Add artist #1", "Add artist #2", "Add artist #3", "Add artist #4", "Add artist #5"],
+    items: ["Kanye West", "Childish Gambino", "America", "Lana Del Rey", "Mac Miller"],
   },
 ]
 
