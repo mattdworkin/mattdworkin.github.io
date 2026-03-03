@@ -3,6 +3,8 @@ name: Deploy Next.js site to Pages
 on:
   push:
     branches: ["main"]
+  schedule:
+    - cron: "17 6 * * *"
   workflow_dispatch:
 
 permissions:
@@ -29,6 +31,13 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Sync Strava Summary
+        run: npm run sync:strava
+        env:
+          STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
+          STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
+          STRAVA_REFRESH_TOKEN: ${{ secrets.STRAVA_REFRESH_TOKEN }}
 
       - name: Build (static export via next.config.js output="export")
         run: npx --no-install next build

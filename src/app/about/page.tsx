@@ -2,11 +2,13 @@
 import Link from "next/link"
 import { ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { readStravaSummary } from "@/lib/strava"
+import { StravaDashboard } from "@/components/StravaDashboard"
 
 const topFiveLists = [
   {
     title: "Top 5 Movies",
-    items: ["Add movie #1", "Add movie #2", "Add movie #3", "Add movie #4", "Add movie #5"],
+    items: ["The Social Network", "Heat", "The Fellowship of the Ring", "A Ghost Story", "Pan's Labyrinth"],
   },
   {
     title: "Top 5 Directors",
@@ -30,7 +32,9 @@ const topFiveLists = [
   },
 ]
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const stravaSummary = await readStravaSummary()
+
   return (
     <div className="future-stream container max-w-6xl px-4 py-10 md:py-14 mx-auto">
       <section className="cell-panel overflow-hidden">
@@ -43,11 +47,10 @@ export default function AboutPage() {
           <div className="p-6 md:p-10">
             <p className="kicker">About Me</p>
             <h1 className="mt-3 text-4xl md:text-5xl font-semibold uppercase tracking-[0.04em] leading-tight">
-              
+              Matthew Dworkin
             </h1>
             <p className="mt-5 max-w-2xl text-base md:text-lg text-muted-foreground">
-              You know I do the software thing, but believe it or not, there's lots of other things that I enjoy doing in my free time - whether it's running a new trail, or picking up a new instrument, I most enjoy doing things that bring me closer to others and open oppurtunities for me to meet new people. Don't hesitate to reach out and share your thoughts on anything I have on here!
-            </p>
+You know I do the software thing, but believe it or not, there's lots of other things that I enjoy doing in my free time - whether it's running a new trail, or picking up a new instrument, I most enjoy doing things that bring me closer to others and open opportunities for me to meet new people. Don't hesitate to reach out and share your thoughts on anything I have on here!            </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <a href="https://github.com/mattdworkin" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline">GitHub</Button>
@@ -93,17 +96,18 @@ export default function AboutPage() {
                   See Projects
                 </Link>
               </div>
+              <StravaDashboard summary={stravaSummary} />
             </div>
           </div>
         </article>
 
-        <article className="cell-panel p-5 md:p-6">
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_1.1fr] gap-5">
+        <article className="cell-panel overflow-visible p-5 pb-7 md:p-7">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_1.1fr] gap-5 items-start">
             <div>
-              <p className="kicker">Spring Street</p>
+              <p className="kicker">Music</p>
               <h2 className="mt-2 text-3xl font-semibold">Band Work and Live Shows</h2>
               <p className="mt-3 text-muted-foreground">
-                Spring Street is the band my friends and I started about a month ago. We're mostly new players and I started learning the drums for it! It's been tough but playing songs I love in front of an audience has always been on my bucket list and I can safely say we survived our first "concert" and some people even said they liked it!
+                Spring Street is the band my friends and I started about a month ago. We're mostly new players and I started learning the drums for it! It's been tough but playing songs I love in front of an audience has always been on my bucket list and I can safely say we survived our first "concert" and some people even said they liked it! Follow our instagram if you want to check us out next time we perform!
               </p>
               <div className="mt-5 flex flex-wrap gap-3 text-sm">
                 <a
@@ -167,7 +171,7 @@ export default function AboutPage() {
         <p className="kicker">Favorites</p>
         <h2 className="mt-2 text-3xl font-semibold">Top 5 Lists</h2>
         <p className="mt-3 text-muted-foreground">
-          Replace these placeholders with your actual picks.
+          I'd love your recommendations!
         </p>
         <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {topFiveLists.map((list) => (

@@ -1,0 +1,30 @@
+{
+  "generated_at": "1970-01-01T00:00:00.000Z",
+  "athlete": {
+    "id": null,
+    "username": null
+  },
+  "metrics": {
+    "ytd_mileage_km": 0,
+    "ytd_target_km": 200,
+    "ytd_progress": 0,
+    "current_streak_days": 0,
+    "longest_streak_days": 0,
+    "longest_run_km": 0,
+    "total_elevation_m": 0,
+    "run_count_ytd": 0
+  },
+  "weekly_mileage_km": [],
+  "easy_pace_trend": [],
+  "latest_run": {
+    "activity_id": null,
+    "name": "No run data yet",
+    "date": "",
+    "distance_km": 0,
+    "moving_time_sec": 0,
+    "elevation_m": 0,
+    "pace_sec_per_km": 0,
+    "map_polyline": null,
+    "url": null
+  }
+}
