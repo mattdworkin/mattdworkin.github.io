@@ -14,15 +14,6 @@ type ProjectShowcase = {
   links: { label: string; href: string }[]
 }
 
-type TimelineEntry = {
-  id: string
-  period: string
-  type: "Experience" | "Project"
-  title: string
-  summary: string
-  links?: { label: string; href: string }[]
-}
-
 const projectShowcase: ProjectShowcase[] = [
   {
     id: "ringil",
@@ -68,33 +59,6 @@ const projectShowcase: ProjectShowcase[] = [
     links: [
       { label: "GitHub", href: "https://github.com/mattdworkin/training-app" },
     ],
-  },
-]
-
-const timeline: TimelineEntry[] = [
-  {
-    id: "l3harris-swe",
-    period: "May 2025 - Aug 2025",
-    type: "Experience",
-    title: "L3Harris Technologies - Software Engineer Intern",
-    summary: "Shipped and maintained API simulation/testing infrastructure used in hardware-facing workflows.",
-    links: [{ label: "View on Resume", href: "/resume" }],
-  },
-  {
-    id: "l3harris-fpga",
-    period: "May 2024 - Aug 2024",
-    type: "Experience",
-    title: "L3Harris Technologies - FPGA Electrical Engineer Intern",
-    summary: "Owned FPGA hardware workflows with a focus on validation and engineering rigor.",
-    links: [{ label: "View on Resume", href: "/resume" }],
-  },
-  {
-    id: "vecima-swe",
-    period: "May 2023 - Aug 2023",
-    type: "Experience",
-    title: "Vecima Networks - Software Engineer Intern",
-    summary: "Built internal Linux/Python tooling for throughput simulation and diagnostics workflows.",
-    links: [{ label: "View on Resume", href: "/resume" }],
   },
 ]
 
@@ -176,11 +140,6 @@ export default function Home() {
                 View Projects <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
-            <Link href="/#timeline">
-              <Button variant="outline" size="lg">
-                View Timeline
-              </Button>
-            </Link>
           </div>
         </div>
       </section>
@@ -229,44 +188,6 @@ export default function Home() {
                   </a>
                 ))}
               </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="timeline" className="py-10 border-t border-white/10 scroll-mt-24" data-reveal>
-        <div className="mb-7">
-          <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-[0.03em]">Work Experience</h2>
-          <p className="mt-3 max-w-3xl text-muted-foreground">
-            A clear timeline of experience that shapes my current engineering direction.
-          </p>
-        </div>
-
-        <div className="space-y-4">
-          {timeline.map((entry) => (
-            <article key={entry.id} className="cell-panel interactive-card timeline-card p-5" onMouseMove={handlePointerMove}>
-              <div className="flex flex-wrap items-center justify-between gap-2">
-                <p className="status-line">{entry.period}</p>
-                <p className="kicker">{entry.type}</p>
-              </div>
-              <h3 className="mt-2 text-xl font-semibold">{entry.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{entry.summary}</p>
-              {entry.links && (
-                <div className="mt-4 flex flex-wrap gap-3">
-                  {entry.links.map((link) => (
-                    <a
-                      key={`${entry.id}-${link.label}`}
-                      href={link.href}
-                      target={link.href.startsWith("http") ? "_blank" : undefined}
-                      rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    >
-                      <Button variant="outline" size="sm">
-                        {link.label}
-                      </Button>
-                    </a>
-                  ))}
-                </div>
-              )}
             </article>
           ))}
         </div>
